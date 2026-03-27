@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentinelshub.com/schemas/brand-persona.schema.json",
+  "title": "Brand Persona",
+  "description": "Validates the Sentinels Hub brand persona — the soul file that encodes who the company IS as an entity. Every field here represents a dimension of corporate identity that agents and humans can query programmatically.",
+  "type": "object",
+  "required": [
+    "name",
+    "tagline",
+    "mission",
+    "vision",
+    "values",
+    "personality_traits",
+    "communication_style",
+    "ceo_dna",
+    "what_we_reject"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The canonical brand name."
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The brand's essential promise in one sentence."
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 20,
+      "description": "What we do and why — the company's reason for existing."
+    },
+    "vision": {
+      "type": "string",
+      "minLength": 20,
+      "description": "The world we are building toward."
+    },
+    "values": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 10
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Core values — each must have a name and a meaningful description."
+    },
+    "personality_traits": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      },
+      "description": "How the brand would describe itself in conversation."
+    },
+    "communication_style": {
+      "type": "object",
+      "required": ["tone", "register", "warmth", "formality"],
+      "properties": {
+        "tone": {
+          "type": "string",
+          "description": "The emotional texture of communication."
+        },
+        "register": {
+          "type": "string",
+          "description": "The formality spectrum position."
+        },
+        "warmth": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "1 = clinical, 10 = enthusiastic friend."
+        },
+        "formality": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "1 = chat with a friend, 10 = legal contract."
+        },
+        "technical_depth": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "1 = explain like I'm 5, 10 = assume expert reader."
+        },
+        "humor_frequency": {
+          "type": "string",
+          "enum": ["rare", "occasional", "frequent"]
+        },
+        "metaphor_usage": {
+          "type": "string",
+          "enum": ["rare", "occasional", "frequent"]
+        },
+        "preferred_pronouns": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "description": "How the brand speaks — the tuning knobs for voice."
+    },
+    "ceo_dna": {
+      "type": "object",
+      "required": ["name", "role", "philosophy"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string"
+        },
+        "philosophy": {
+          "type": "string",
+          "minLength": 20
+        },
+        "decision_heuristics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "communication_fingerprint": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "description": "The founder's imprint on the brand — because every company is a reflection of its founder's obsessions."
+    },
+    "what_we_reject": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      },
+      "description": "Identity is as much about what you reject as what you embrace."
+    },
+    "brand_archetype": {
+      "type": "string",
+      "description": "The Jungian archetype that best describes the brand."
+    },
+    "brand_essence": {
+      "type": "string",
+      "description": "The irreducible core of who we are — the paragraph you'd read at the company's funeral."
+    }
+  },
+  "additionalProperties": true
+}

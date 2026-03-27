@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentinelshub.com/schemas/voice-tone.schema.json",
+  "title": "Voice & Tone System",
+  "description": "Validates the Sentinels Hub voice and tone system — the filtering algorithm for everything we say. Voice is who we are; tone is how we adjust for context.",
+  "type": "object",
+  "required": [
+    "voice_identity",
+    "tone_scales",
+    "writing_rules",
+    "word_preferences",
+    "personality_contrasts"
+  ],
+  "properties": {
+    "voice_identity": {
+      "type": "object",
+      "required": ["core_voice", "voice_in_one_sentence"],
+      "properties": {
+        "core_voice": {
+          "type": "string",
+          "minLength": 10,
+          "description": "The voice described as a person."
+        },
+        "voice_in_one_sentence": {
+          "type": "string",
+          "minLength": 20,
+          "description": "The single-sentence litmus test for voice consistency."
+        }
+      },
+      "additionalProperties": true,
+      "description": "The core identity of the brand's voice."
+    },
+    "tone_scales": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["dimension", "range", "default_value", "description"],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The name of the tone dimension."
+          },
+          "range": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 2,
+            "maxItems": 2,
+            "description": "The minimum and maximum values for this dimension."
+          },
+          "default_value": {
+            "type": "number",
+            "description": "The default position on this scale."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 5,
+            "description": "What the extremes of this dimension mean."
+          },
+          "context_overrides": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["context", "value"],
+              "properties": {
+                "context": { "type": "string" },
+                "value": { "type": "number" }
+              },
+              "additionalProperties": false
+            },
+            "description": "How this dimension shifts in specific contexts."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "The tunable dimensions of tone — each is a slider agents can adjust per context."
+    },
+    "writing_rules": {
+      "type": "object",
+      "required": ["always", "never"],
+      "properties": {
+        "always": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Rules that must always be followed."
+        },
+        "never": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Anti-patterns that must never appear."
+        }
+      },
+      "additionalProperties": false,
+      "description": "The absolute rules of writing — the guardrails."
+    },
+    "word_preferences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["use", "avoid"],
+        "properties": {
+          "use": {
+            "type": "string",
+            "description": "The preferred word."
+          },
+          "avoid": {
+            "type": "string",
+            "description": "The word to avoid."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why this preference exists — the philosophy behind the word choice."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Word-level preferences — because language shapes thought."
+    },
+    "personality_contrasts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["we_are", "we_are_not"],
+        "properties": {
+          "we_are": {
+            "type": "string",
+            "description": "What we are."
+          },
+          "we_are_not": {
+            "type": "string",
+            "description": "What we are explicitly not."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Identity through contrast — the clearest way to define a voice."
+    },
+    "forbidden_words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word", "reason"],
+        "properties": {
+          "word": {
+            "type": "string",
+            "description": "The forbidden word."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why this word is banned."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Words that must never appear in Sentinels communication — with reasons."
+    }
+  },
+  "additionalProperties": true
+}

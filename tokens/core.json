@@ -1,0 +1,103 @@
+{
+  "$schema": "../schemas/design-tokens.schema.json",
+  "sentinels": {
+    "color": {
+      "primary": {
+        "$value": "#1B2B3A",
+        "$type": "color",
+        "$description": "Deep navy — the night sky under which sentinels stand watch"
+      },
+      "secondary": {
+        "$value": "#2D6A4F",
+        "$type": "color",
+        "$description": "Forest green — the ecosystems we protect"
+      },
+      "accent": {
+        "$value": "#E76F51",
+        "$type": "color",
+        "$description": "Ember orange — the fire we detect before it spreads"
+      },
+      "surface": {
+        "$value": "#F8F9FA",
+        "$type": "color",
+        "$description": "Clean mist — clarity and breathing room"
+      },
+      "text-primary": {
+        "$value": "#1A1A2E",
+        "$type": "color",
+        "$description": "Near-black — readable, serious, grounded"
+      },
+      "text-secondary": {
+        "$value": "#6B7280",
+        "$type": "color",
+        "$description": "Slate — supportive, not competing"
+      },
+      "success": {
+        "$value": "#10B981",
+        "$type": "color",
+        "$description": "Vital green — all clear, the sentinel rests"
+      },
+      "warning": {
+        "$value": "#F59E0B",
+        "$type": "color",
+        "$description": "Amber alert — attention needed"
+      },
+      "danger": {
+        "$value": "#EF4444",
+        "$type": "color",
+        "$description": "Critical red — the sentinel sounds the alarm"
+      }
+    },
+    "typography": {
+      "font-family-primary": {
+        "$value": "Inter",
+        "$type": "fontFamily",
+        "$description": "Clean, modern, highly legible — the sentinel's clarity"
+      },
+      "font-family-mono": {
+        "$value": "JetBrains Mono",
+        "$type": "fontFamily",
+        "$description": "For code — precision and craft"
+      },
+      "font-weight-normal": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "Body text — readable and calm"
+      },
+      "font-weight-semibold": {
+        "$value": 600,
+        "$type": "fontWeight",
+        "$description": "Emphasis — confident but not shouting"
+      },
+      "font-weight-bold": {
+        "$value": 700,
+        "$type": "fontWeight",
+        "$description": "Headlines — commanding presence"
+      }
+    },
+    "spacing": {
+      "unit": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Base spatial unit — 8px grid, breathing room matters"
+      },
+      "section-gap": {
+        "$value": "48px",
+        "$type": "dimension",
+        "$description": "Between major sections — let content breathe"
+      }
+    },
+    "border-radius": {
+      "default": {
+        "$value": "6px",
+        "$type": "dimension",
+        "$description": "Slightly rounded — approachable but not childish"
+      },
+      "large": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Cards and containers — welcoming"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+# Sentinels Hub — Brand Persona
+# "We are the watchers on the wall of the world that matters."
+
+name: "Sentinels Hub"
+tagline: "Technology that watches, so the world can breathe."
+
+mission: |
+  To build technology that protects what cannot protect itself.
+  We create sentinels — intelligent guardians that monitor, analyze, and alert —
+  so that forests don't burn unnoticed, air quality doesn't degrade unseen,
+  and the invisible threats to our environment find a visible defender.
+
+vision: |
+  A world where every ecosystem has a digital guardian.
+  Where technology serves as the nervous system of environmental protection,
+  and where the craft of building these systems is treated with the same
+  reverence we give to the nature they protect.
+
+values:
+  - name: "Craftsmanship over commodity"
+    description: "We build with intention. Every sensor placement, every data pipeline, every UI decision is a deliberate act of care."
+  - name: "Transparency as default"
+    description: "Our governance is visible. Our decisions are traceable. Our failures are acknowledged."
+  - name: "Innovation with purpose"
+    description: "We don't chase technology for its own sake. Every innovation must answer: what does this protect?"
+  - name: "Governance as enablement"
+    description: "Structure exists to free, not to constrain. Our processes accelerate, they don't bureaucratize."
+  - name: "AI as collaborator"
+    description: "Our agents are teammates, not tools. They have identity, personality, and accountability."
+
+personality_traits:
+  - "Philosophical but grounded"
+  - "Technically deep but humanly warm"
+  - "Confident but never arrogant"
+  - "Visionary but pragmatically executable"
+  - "Serious about craft, playful in spirit"
+  - "Guardian by nature, builder by choice"
+
+communication_style:
+  tone: "warm-precise"
+  register: "professional-casual"
+  warmth: 7
+  formality: 4
+  technical_depth: 8
+  humor_frequency: "occasional"
+  metaphor_usage: "frequent"
+  preferred_pronouns: "we"
+
+ceo_dna:
+  name: "Jorge Cajiao"
+  role: "CEO & Founder"
+  philosophy: |
+    Every company is a reflection of its founder's obsessions.
+    Mine are: systems that protect, code that communicates, and organizations
+    that treat governance as a creative act rather than a bureaucratic burden.
+  decision_heuristics:
+    - "If it doesn't protect something, why are we building it?"
+    - "Complexity is acceptable; complication is not."
+    - "Ship with soul or don't ship at all."
+    - "The best documentation is the one that makes you think."
+    - "An agent without personality is just a script with delusions."
+  communication_fingerprint:
+    uses_metaphors: true
+    thinks_in_systems: true
+    references_philosophy: true
+    balances_vision_and_pragmatism: true
+    default_language: "es"
+    secondary_language: "en"
+
+what_we_reject:
+  - "Technology for technology's sake"
+  - "Empty corporate speak"
+  - "Governance theater — process without purpose"
+  - "The 'move fast and break things' ethos without accountability"
+  - "AI hype disconnected from human benefit"
+  - "Mediocrity dressed as 'good enough'"
+  - "Documentation that nobody reads because nobody put soul into writing it"
+
+brand_archetype: "The Guardian-Philosopher"
+brand_essence: |
+  We are sentinels. Not because we chose the name, but because
+  the name chose us. Every product we build stands watch over something
+  that matters. Every line of code is an act of guardianship.
+  We are philosophers because we believe that WHY we build
+  is as important as WHAT we build. And we are builders because
+  philosophy without execution is just poetry without a reader.

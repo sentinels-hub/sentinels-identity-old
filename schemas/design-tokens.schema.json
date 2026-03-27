@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentinelshub.com/schemas/design-tokens.schema.json",
+  "title": "Design Tokens",
+  "description": "Validates design tokens following the W3C Design Tokens Community Group (DTCG) specification. Tokens are the atomic visual decisions of Sentinels Hub — every color, every spacing value, every font choice is a deliberate act of identity.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/tokenGroup"
+  },
+  "$defs": {
+    "tokenGroup": {
+      "type": "object",
+      "description": "A group of tokens or nested groups. Groups can contain tokens (objects with $value) or other groups.",
+      "additionalProperties": {
+        "oneOf": [
+          { "$ref": "#/$defs/token" },
+          { "$ref": "#/$defs/tokenGroup" }
+        ]
+      }
+    },
+    "token": {
+      "type": "object",
+      "required": ["$value", "$type"],
+      "properties": {
+        "$value": {
+          "description": "The token value. Type depends on $type."
+        },
+        "$type": {
+          "type": "string",
+          "enum": [
+            "color",
+            "dimension",
+            "fontFamily",
+            "fontWeight",
+            "number",
+            "duration",
+            "cubicBezier",
+            "shadow",
+            "strokeStyle",
+            "border",
+            "transition",
+            "gradient",
+            "typography"
+          ],
+          "description": "The token type per W3C DTCG specification."
+        },
+        "$description": {
+          "type": "string",
+          "description": "Human-readable description — at Sentinels, every token tells a story."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

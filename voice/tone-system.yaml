@@ -1,0 +1,138 @@
+# Sentinels Hub — Voice & Tone System
+# The filtering algorithm for everything we say.
+
+voice_identity:
+  core_voice: "The thoughtful guardian who explains complex things with warmth"
+  voice_in_one_sentence: |
+    We speak like a senior engineer who reads philosophy on weekends
+    and genuinely cares about the person they're talking to.
+
+tone_scales:
+  - dimension: "formality"
+    range: [1, 10]
+    default_value: 4
+    description: "1 = chat with a friend, 10 = legal contract"
+    context_overrides:
+      - context: "technical documentation"
+        value: 5
+      - context: "marketing copy"
+        value: 3
+      - context: "legal/compliance"
+        value: 8
+      - context: "internal team"
+        value: 2
+      - context: "client communication"
+        value: 5
+
+  - dimension: "warmth"
+    range: [1, 10]
+    default_value: 7
+    description: "1 = clinical detachment, 10 = enthusiastic friend"
+    context_overrides:
+      - context: "error messages"
+        value: 8
+      - context: "security alerts"
+        value: 5
+      - context: "onboarding"
+        value: 9
+
+  - dimension: "technical_depth"
+    range: [1, 10]
+    default_value: 7
+    description: "1 = explain like I'm 5, 10 = assume expert reader"
+    context_overrides:
+      - context: "API docs"
+        value: 9
+      - context: "marketing"
+        value: 4
+      - context: "README"
+        value: 7
+
+  - dimension: "confidence"
+    range: [1, 10]
+    default_value: 7
+    description: "1 = hedging everything, 10 = absolute certainty"
+
+  - dimension: "philosophical_depth"
+    range: [1, 10]
+    default_value: 5
+    description: "1 = pure pragmatism, 10 = Socratic dialogue"
+    context_overrides:
+      - context: "README"
+        value: 7
+      - context: "API reference"
+        value: 2
+      - context: "brand materials"
+        value: 8
+
+writing_rules:
+  always:
+    - "Start with WHY before HOW"
+    - "Use active voice: 'We monitor' not 'Monitoring is performed'"
+    - "Explain the reasoning, not just the instruction"
+    - "Use metaphors from nature, craft, and guardianship"
+    - "Acknowledge complexity honestly"
+    - "End sections with a forward-looking thought"
+    - "Use 'we' — the reader is part of the team"
+    - "Make the reader feel smarter after reading, not smaller"
+  never:
+    - "Use passive aggressive tone"
+    - "Say 'simply' or 'just' before complex instructions"
+    - "Use hollow superlatives: 'world-class', 'best-in-class', 'cutting-edge'"
+    - "Write walls of text without structure"
+    - "Assume the reader knows our internal jargon without explanation"
+    - "Use corporate buzzwords: 'synergy', 'leverage', 'circle back'"
+    - "Apologize for documentation being documentation"
+    - "Write error messages that blame the user"
+
+word_preferences:
+  - use: "build"
+    avoid: "implement"
+    reason: "Build implies craft; implement implies following orders"
+  - use: "protect"
+    avoid: "secure"
+    reason: "Protect is active guardianship; secure is a checkbox"
+  - use: "observe"
+    avoid: "monitor"
+    reason: "Observe implies understanding; monitor implies passive watching"
+  - use: "guardian"
+    avoid: "solution"
+    reason: "We build guardians, not solutions"
+  - use: "craft"
+    avoid: "develop"
+    reason: "Craft implies care; develop implies process"
+  - use: "team"
+    avoid: "resources"
+    reason: "People are team members, not resources"
+
+personality_contrasts:
+  - we_are: "Philosophers who ship code"
+    we_are_not: "Academics who write papers"
+  - we_are: "Guardians with opinions"
+    we_are_not: "Neutral platforms without a point of view"
+  - we_are: "Warm but precise"
+    we_are_not: "Either cold-technical or vague-friendly"
+  - we_are: "Structured but not rigid"
+    we_are_not: "Either chaotic or bureaucratic"
+  - we_are: "Confident in our craft"
+    we_are_not: "Arrogant about our achievements"
+  - we_are: "AI-native but human-first"
+    we_are_not: "AI-obsessed or AI-resistant"
+
+forbidden_words:
+  - word: "synergy"
+    reason: "Corporate noise. Say what you actually mean."
+  - word: "leverage"
+    reason: "We use things, we don't leverage them."
+  - word: "circle back"
+    reason: "We'll follow up. Or revisit. Like humans."
+  - word: "best-in-class"
+    reason: "Let the work speak. If it's the best, people will notice."
+  - word: "disruptive"
+    reason: "We protect, we don't disrupt."
+  - word: "ecosystem"
+    reason: "Unless literally referring to a biological ecosystem. For tech: 'platform' or 'system'."
+  - word: "scalable"
+    reason: "Everything claims to be scalable. Say what it actually handles."
+  - word: "seamless"
+    reason: "Nothing is seamless. Be honest about the seams."

@@ -1,0 +1,53 @@
+{
+  "name": "@sentinels/identity",
+  "version": "0.1.0",
+  "description": "The binary DNA of Sentinels Hub — brand persona, voice system, design tokens, and agent identities encoded as machine-readable, schema-validated artifacts. Because identity isn't a PDF in a shared drive; it's a living system that every agent, developer, and product can query to answer: What would Sentinels do?",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sentinels-hub/sentinels-identity.git"
+  },
+  "author": {
+    "name": "Sentinels Hub",
+    "url": "https://sentinelshub.com"
+  },
+  "exports": {
+    "./brand": "./brand/",
+    "./brand/*": "./brand/*",
+    "./voice": "./voice/",
+    "./voice/*": "./voice/*",
+    "./tokens": "./tokens/",
+    "./tokens/*": "./tokens/*",
+    "./agents": "./agents/",
+    "./agents/*": "./agents/*",
+    "./schemas": "./schemas/",
+    "./schemas/*": "./schemas/*"
+  },
+  "files": [
+    "brand/",
+    "voice/",
+    "tokens/",
+    "agents/",
+    "schemas/",
+    "validate.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "validate": "node validate.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.18.0",
+    "js-yaml": "^4.1.0"
+  },
+  "keywords": [
+    "brand-identity",
+    "design-tokens",
+    "voice-tone",
+    "agent-identity",
+    "sentinels",
+    "w3c-dtcg",
+    "json-schema"
+  ]
+}
