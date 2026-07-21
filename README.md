@@ -1,5 +1,10 @@
 # Sentinels Identity
 
+> [!IMPORTANT]
+> Este repositorio histórico ha sido sustituido por el repositorio canónico privado
+> [`sentinels-hub/sentinels-identity`](https://github.com/sentinels-hub/sentinels-identity).
+> Se conserva en modo archivado únicamente como referencia; no debe recibir cambios nuevos.
+
 > *"The question 'Who are we?' is not philosophical decoration.*
 > *It is the first line of code in every system we build."*
 
